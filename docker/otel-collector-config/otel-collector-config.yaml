@@ -74,7 +74,7 @@ exporters:
     history_days: 7
     create_history_days: 3
     replication_num: 1
-    timezone: Asia/Shanghai
+    timezone: UTC
     log_response: false
     timeout: 60s
     retry_on_failure:

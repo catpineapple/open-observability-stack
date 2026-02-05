@@ -16,6 +16,11 @@ spec:
   feSpec:
     replicas: {{ .Values.doris.internal.cluster.fe.replicas }}
     image: {{ .Values.doris.internal.cluster.fe.image }}
+    {{- if and .Values.dogstack.timezone (ne .Values.dogstack.timezone "UTC") }}
+    envVars:
+      - name: TZ
+        value: {{ .Values.dogstack.timezone | quote }}
+    {{- end }}
     {{- with .Values.doris.internal.cluster.fe.resources }}
     requests:
       cpu: {{ .requests.cpu }}
@@ -47,6 +52,11 @@ spec:
   beSpec:
     replicas: {{ .Values.doris.internal.cluster.be.replicas }}
     image: {{ .Values.doris.internal.cluster.be.image }}
+    {{- if and .Values.dogstack.timezone (ne .Values.dogstack.timezone "UTC") }}
+    envVars:
+      - name: TZ
+        value: {{ .Values.dogstack.timezone | quote }}
+    {{- end }}
     {{- with .Values.doris.internal.cluster.be.resources }}
     requests:
       cpu: {{ .requests.cpu }}

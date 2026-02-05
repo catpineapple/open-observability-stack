@@ -10,6 +10,15 @@ global:
   nameOverride: ""
   fullnameOverride: ""
 
+# -----------------------------------------------------------------------------
+# DOGStack settings
+# -----------------------------------------------------------------------------
+dogstack:
+  # Timezone for the entire stack (Doris + OTel Collector)
+  # Example: Asia/Shanghai, America/New_York, Europe/London
+  # Default: UTC
+  timezone: UTC
+
 # =============================================================================
 # Doris Configuration
 # =============================================================================
@@ -131,7 +140,6 @@ otel:
     historyDays: 7
     createHistoryDays: 3
     replicationNum: 1
-    timezone: Asia/Shanghai
     timeout: 60s
     sendingQueue:
       enabled: true

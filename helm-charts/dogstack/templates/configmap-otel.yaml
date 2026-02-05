@@ -105,7 +105,7 @@ data:
         history_days: {{ .Values.otel.dorisExporter.historyDays }}
         create_history_days: {{ .Values.otel.dorisExporter.createHistoryDays }}
         replication_num: {{ .Values.otel.dorisExporter.replicationNum }}
-        timezone: {{ .Values.otel.dorisExporter.timezone }}
+        timezone: {{ .Values.dogstack.timezone }}
         log_response: false
         timeout: {{ .Values.otel.dorisExporter.timeout }}
         retry_on_failure:
