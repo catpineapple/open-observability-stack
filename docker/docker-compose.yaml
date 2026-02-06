@@ -9,7 +9,7 @@ services:
   # Apache Doris - All-in-One (FE + BE in single container)
   # =============================================================================
   doris:
-    image: ${DORIS_IMAGE:-apache/doris:3.0.8-all}
+    image: ${DORIS_IMAGE:-apache/doris:4.0.3-all}
     container_name: doris
     hostname: doris
     restart: unless-stopped
